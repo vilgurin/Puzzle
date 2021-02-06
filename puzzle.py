@@ -1,4 +1,7 @@
-'''This module contains functions'''
+'''
+This module contains functions
+https://github.com/vilgurin/Puzzle
+'''
 def check_rows(board):
     '''
     The function checks the board's rows and returns True if each of them
