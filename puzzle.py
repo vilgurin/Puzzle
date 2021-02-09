@@ -3,6 +3,7 @@ This module contains functions
 https://github.com/vilgurin/Puzzle
 '''
 def check_rows(board):
+
     '''
     The function checks the board's rows and returns True if each of them
     contains not more than one number from 1 to 9.
@@ -13,10 +14,12 @@ def check_rows(board):
     " 61  35","3  1   ","      *","2 5"," 2***"," ****"])
     False
     '''
+
     for i in board:
         for sign in i:
             if sign.isdigit() == True and i.count(sign) >1:
                 return False
+
     return True
 
 def check_columns(board):
@@ -38,9 +41,11 @@ def check_columns(board):
         for key in numbers:
             if numbers[key] >1:
                 return False
+
     return True
 
 def check_colors(board):
+
     '''
     The function checks the board's colors areas and returns True if each of them
     contains not more than one number from 1 to 9.
@@ -48,6 +53,7 @@ def check_colors(board):
     "     9 5 "," 6  83  *","3   1  **","  8  2***","  2  ****"])
     True
     '''
+
     numbers = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
     k = 0
     for i in range(len(board[0])):
@@ -69,6 +75,7 @@ def check_colors(board):
 
 
 def validate_board(board):
+
     '''
     The function checkes it the boardfilled in according to the following rules:
 
@@ -84,11 +91,13 @@ def validate_board(board):
     "     9 5 "," 6  83  *","3   1  **","  8  2***","  2  ****"])
     False
     '''
+
     check1 = check_rows(board)
     check2 = check_columns(board)
     check3 = check_colors(board)
 
     if check1 and check2 and check3:
         return True
+        
     return False
     
